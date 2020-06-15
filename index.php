@@ -16,6 +16,12 @@
             unset($_SESSION['message']);
         }
     ?>
-    <form action="upload.php" method="post"></form>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <div>
+            <span>Upload File :</span>
+            <input type="file" name="uploadedFile" id="">
+        </div>
+        <input type="button" name="uploadBtn" value="Upload">
+    </form>
 </body>
 </html>
