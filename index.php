@@ -1,27 +1,32 @@
 <?php
-    session_start();
+session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Upload file</title>
+    <title>PHP Upfile</title>
 </head>
+
 <body>
     <?php
-        if (isset($_SESSION['message']) && $_SESSION['message']) {
-            printf('<b>%s</b>', $_SESSION['message']);
-            unset($_SESSION['message']);
-        }
+    if (isset($_SESSION['message']) && $_SESSION['message']) {
+        printf('<b>%s</b>', $_SESSION['message']);
+        unset($_SESSION['message']);
+    }
     ?>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
         <div>
-            <span>Upload File :</span>
-            <input type="file" name="uploadedFile" id="">
+            <span>Upload File:</span>
+            <input type="file" name="uploadedFile">
         </div>
-        <input type="button" name="uploadBtn" value="Upload">
+
+        <input type="submit" name="uploadBtn" value="Upload">
     </form>
 </body>
+
 </html>
